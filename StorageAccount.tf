@@ -27,6 +27,12 @@ resource "azurerm_storage_account" "POC-StorageAccount" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
  # account_replication_type = "GRS"
+  
+resource "azurerm_storage_container" "Blob_storage" {
+  name                  = "blobgithubactions"
+  storage_account_name  = azurerm_storage_account.Blob_storage.name
+  container_access_type = "private"
+}
 
   tags = {
     Owner = "ramm"
