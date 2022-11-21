@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "ResourceGroup-POC-RG" {
 }
 
 resource "azurerm_virtual_network" "VirtualNetwork" {
-  name                = "POC-network"
+  name                = "${var.name}storage"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.ResourceGroup-POC-RG.location
   resource_group_name = azurerm_resource_group.ResourceGroup-POC-RG.name
